@@ -9,4 +9,4 @@ Today I built DecoBot — a fully functional rule-based AI chatbot that:
 This is Project 1 of my AI Engineering internship at Decodelabs — and it's just the beginning.
 The biggest lesson I learned today:
 You don't need to know everything before you start. You just need to know enough to build — then build.
-Next up: Project 2 — making my chatbot understand meaning, not just exact words. 
+
