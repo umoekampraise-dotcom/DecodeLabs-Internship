@@ -349,33 +349,47 @@ This system offers you Top 5 roles that will suit you best after you input your 
 ## Complete Pipeline
 
 ### Step 1 (INSTALL LIBRARIES)
+```python
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+```
 
 ### Step 2 (READ THE RAW-SKILL.CSV I CREATED)
+```python
 df = pd.read_csv("raw-skills.csv")
+```
 
 ### Step 3 (GETS USER'S SKILLS)
+```python
 user_input = input("Enter your skills (separated by spaces): ")
+```
+
 
 ###Step 4 (LEARNING THE DATA IN RAW-SKILLS.CSV FILE)
+```python
 tdif_matrix = vectorizer.fit_transform(df["skills"])
+```
 
 ### Step 4 (APPLY THE DATA LEARNT ON THE USER'S SKILLS)
+```python
 user_vector= vectorizer.transform([user_input])
+```
 
 ### Step 5 (MEASURES THE ROLE MATHEMATICALLY TO MATCH FROM TOP 1-TOP 3)
+```python
 scores = cosine_similarity(user_vector, tdif_matrix)
 top_indices = scores[0].argsort()[::-1][:3]
+```
 
 ### Step 6 (RECOMMENDS THE TOP 3 ROLES TO THE USER)
+```python
 print("\n Top 3 Recommended Roles for you:")
 for i , idx in enumerate(top_indices):
     role=df["role"].iloc[idx]
     score=scores[0][idx]
     print(f"{i + 1}. {role} - Match score: {round(score * 100, 2)}%")
-
+```
 
 ## How To Run It
 1. Clone the repository
