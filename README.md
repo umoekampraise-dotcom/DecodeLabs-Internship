@@ -366,12 +366,12 @@ user_input = input("Enter your skills (separated by spaces): ")
 ```
 
 
-###Step 4 (Learning the data in the CSV file)
+### Step 4 (Learning the data in the CSV file)
 ```python
 tdif_matrix = vectorizer.fit_transform(df["skills"])
 ```
 
-### Step 4 (Apply the data learnt on the user's skills)
+### Step 5 (Apply the data learnt on the user's skills)
 ```python
 user_vector= vectorizer.transform([user_input])
 ```
