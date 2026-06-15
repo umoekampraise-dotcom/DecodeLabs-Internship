@@ -376,7 +376,7 @@ tdif_matrix = vectorizer.fit_transform(df["skills"])
 user_vector= vectorizer.transform([user_input])
 ```
 
-### 📏StepMeasures the role mathStepm Top 1 - Top 3)
+### 📏Step 6 (Measures the role mathematically from Top 1 - Top 3)
 ```python
 scores = cosine_similarity(user_vector, tdif_matrix)
 top_indices = scores[0].argsort()[::-1][:3]
