@@ -348,41 +348,41 @@ This system offers you Top 5 roles that will suit you best after you input your 
 
 ## Complete Pipeline
 
-### Step 1 (INSTALL LIBRARIES)
+### Step 1 (Install Libraries)
 ```python
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 ```
 
-### Step 2 (READ THE RAW-SKILL.CSV I CREATED)
+### Step 2 (Reads the Raw_Skils.csv file I created)
 ```python
 df = pd.read_csv("raw-skills.csv")
 ```
 
-### Step 3 (GETS USER'S SKILLS)
+### Step 3 (Gets user's skills)
 ```python
 user_input = input("Enter your skills (separated by spaces): ")
 ```
 
 
-###Step 4 (LEARNING THE DATA IN RAW-SKILLS.CSV FILE)
+###Step 4 (Learning the data in the CSV file)
 ```python
 tdif_matrix = vectorizer.fit_transform(df["skills"])
 ```
 
-### Step 4 (APPLY THE DATA LEARNT ON THE USER'S SKILLS)
+### Step 4 (Apply the data learnt on the user's skills)
 ```python
 user_vector= vectorizer.transform([user_input])
 ```
 
-### Step 5 (MEASURES THE ROLE MATHEMATICALLY TO MATCH FROM TOP 1-TOP 3)
+### 📏StepMeasures the role mathStepm Top 1 - Top 3)
 ```python
 scores = cosine_similarity(user_vector, tdif_matrix)
 top_indices = scores[0].argsort()[::-1][:3]
 ```
 
-### Step 6 (RECOMMENDS THE TOP 3 ROLES TO THE USER)
+### 👌Step 6 (Recommends the Top 3 roles to the user)
 ```python
 print("\n Top 3 Recommended Roles for you:")
 for i , idx in enumerate(top_indices):
